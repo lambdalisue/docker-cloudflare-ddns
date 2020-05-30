@@ -1,6 +1,8 @@
 #!/bin/sh
 . /app/cloudflare.sh
 
+set -e
+
 # Verify $API_KEY
 statusCode=$(verifyToken)
 
@@ -44,8 +46,9 @@ if [ -z "$SCHEDULE" ]; then
 fi
 echo "$SCHEDULE /bin/sh /ddns.sh" > /var/spool/cron/crontabs/root
 
+# Execute ddns.sh immediately
+/bin/sh /ddns.sh
+
 # Start crontab
 crond -f
 
-# Execute ddns.sh immediately
-/bin/sh /ddns.sh

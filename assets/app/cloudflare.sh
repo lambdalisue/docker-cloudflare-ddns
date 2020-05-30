@@ -37,9 +37,9 @@ getDnsRecordId() {
 updateDnsRecord() {
   cloudflare -X PATCH \
     -d "{\"name\": \"$3\", \"content\": \"$4\"}" \
-    "$CF_API/zones/$1/dns_records$2" | jq -r '.result.id'
+    "$CF_API/zones/$1/dns_records/$2" | jq -r '.result.id'
 }
 
 getDnsRecordIp() {
-  cloudflare "$CF_API/zones/$1/dns_records/$2" | jq -r '.result.content'
+  cloudflare "$CF_API/zones/$1/dns_records/$2" | jq -r '.result[0].content'
 }

@@ -1,8 +1,9 @@
 #!/bin/sh
 # Forked from https://github.com/oznu/docker-cloudflare-ddns
-
 . /app/cloudflare.sh
 . /tmp/cloudflare.conf
+
+set -e
 
 ipCur=$(getPublicIpAddress)
 ipDns=$(getDnsRecordIp $CF_ZONE_ID $CR_RECORD_ID)
