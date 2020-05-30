@@ -17,11 +17,10 @@ image: ## Build a docker image
 .PHONY: run
 run: ## Build a docker image
 	@docker run --rm -it \
+	    -e API_KEY=${API_KEY} \
 	    -e ZONE=${ZONE} \
-	    -e DNSRECORD=${DNSRECORD} \
-	    -e AUTH_EMAIL=${AUTH_EMAIL} \
-	    -e AUTH_KEY=${AUTH_KEY} \
-	    -e CRON_SCHEDULE="${CRON_SCHEDULE}" \
+	    -e SUBDOMAIN=${SUBDOMAIN} \
+	    -e SCHEDULE="${SCHEDULE}" \
 	    ${IMAGE}:${TAG}
 
 .PHONY: pull
