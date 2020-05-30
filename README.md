@@ -1,4 +1,4 @@
-# docker-update-cloudflare-dns
+# docker-cloudflare-ddns
 
 A docker image to update DNS record in Cloudflare.
 
@@ -9,6 +9,7 @@ ZONE=example.com
 DNSRECORD=www.example.com
 AUTH_EMAIL=johndoe@example.com
 AUTH_KEY=...
+CRON_SCHEDULE="30 * * * *"
 ```
 
 # Thanks
