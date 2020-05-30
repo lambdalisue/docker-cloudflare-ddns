@@ -21,6 +21,7 @@ run: ## Build a docker image
 	    -e DNSRECORD=${DNSRECORD} \
 	    -e AUTH_EMAIL=${AUTH_EMAIL} \
 	    -e AUTH_KEY=${AUTH_KEY} \
+	    -e CRON_SCHEDULE="${CRON_SCHEDULE}" \
 	    ${IMAGE}:${TAG}
 
 .PHONY: pull
