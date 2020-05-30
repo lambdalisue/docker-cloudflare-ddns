@@ -1,4 +1,4 @@
-IMAGE := lambdalisue/docker-update-cloudflare-dns
+IMAGE := lambdalisue/docker-cloudflare-ddns
 TAG   := latest
 
 # http://postd.cc/auto-documented-makefile/
