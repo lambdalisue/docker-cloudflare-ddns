@@ -41,5 +41,5 @@ updateDnsRecord() {
 }
 
 getDnsRecordIp() {
-  cloudflare "$CF_API/zones/$1/dns_records/$2" | jq -r '.result[0].content'
+  cloudflare "$CF_API/zones/$1/dns_records/$2" | jq -r '.result.content'
 }

@@ -6,7 +6,7 @@
 set -e
 
 ipCur=$(getPublicIpAddress)
-ipDns=$(getDnsRecordIp $CF_ZONE_ID $CR_RECORD_ID)
+ipDns=$(getDnsRecordIp $CF_ZONE_ID $CF_RECORD_ID)
 
 if [ "$ipCur" == "$ipDns" ]; then
   echo "No DNS update required for $CF_RECORD_NAME ($ipDns)"
